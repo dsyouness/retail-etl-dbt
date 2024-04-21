@@ -6,6 +6,7 @@ RUN pip install -r requirements.txt
 COPY . /app
 WORKDIR /app
 
+RUN dbt deps
 # Expose port 8000 for the FastAPI application
 EXPOSE 8080
 
