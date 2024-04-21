@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt
 COPY . /app
 WORKDIR /app
 
-CMD ["dbt", "run"]
+CMD ["run"]
