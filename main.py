@@ -13,7 +13,7 @@ def run_dbt():
     # Return the output as a response
     return {"output": result.stdout, "error": result.stderr}
 
-@app.get("/docs")
+@app.get("/docs-dbt")
 def expose_docs():
     # log the output of the command
     result = subprocess.run(["dbt", "docs", "generate"], capture_output=True, text=True)
