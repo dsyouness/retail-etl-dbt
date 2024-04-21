@@ -18,7 +18,7 @@ def expose_docs():
     # log the output of the command
     result = subprocess.run(["dbt", "docs", "generate"], capture_output=True, text=True)
     logging.info(result.stdout)
-    result = subprocess.run(["dbt", "docs", "serve"], capture_output=True, text=True)
+    result = subprocess.run(["dbt", "docs", "serve", "--port", "8999"], capture_output=True, text=True)
     logging.info(result.stdout)
 
     return {"output": result.stdout, "error": result.stderr}
