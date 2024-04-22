@@ -25,6 +25,6 @@ def run_dbt():
         return {"output": result.stdout, "error": result.stderr}
     else:
         # The command failed, raise an HTTPException with a 500 status code and the error message
-        error_message = f"dbt run command failed with error: {result.stderr}"
+        error_message = f"dbt run command failed with error: {result.stderr} stdoud : {result.stdout}"
         logger.error(error_message)
         raise HTTPException(status_code=500, detail=error_message)
